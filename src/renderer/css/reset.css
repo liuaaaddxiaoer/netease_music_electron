@@ -1,0 +1,15 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+input {
+  background: transparent;
+  outline: none;
+  border: none;
+}
+
+input::placeholder {
+  color: rgb(205, 205, 205);
+  font-size: 16px;
+}
