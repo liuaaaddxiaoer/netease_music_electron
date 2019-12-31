@@ -1,11 +1,11 @@
 <template>
   <div id="app">
     <HomeHeader />
-    <el-row class="sectionContainer" type="flex">
-      <el-col :span="6">
+    <el-row class="sectionContainer">
+      <el-col :span="6" class="side">
         <HomeSidebar />
       </el-col>
-      <el-col :span="18">
+      <el-col :span="18" class="content">
         <router-view />
       </el-col>
     </el-row>
@@ -28,7 +28,7 @@ export default {
 };
 </script>
 
-<style>
+<style lang="less" scoped>
 #app {
   overflow-x: hidden;
   display: flex;
@@ -37,6 +37,16 @@ export default {
 }
 
 .sectionContainer {
-  height: 100%;
+  padding: 60px 0;
+  max-height: 100%;
+  .side {
+    height: calc(100vh - 2 * 60px);
+    float: left;
+    position: fixed;
+  }
+  .content {
+    width: 100%;
+    padding-left: 25%;
+  }
 }
 </style>

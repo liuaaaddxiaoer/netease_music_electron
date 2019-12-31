@@ -1,5 +1,5 @@
 <template>
-  <el-row type="flex">
+  <el-row type="flex" class="container">
     <el-col :span="6">1</el-col>
     <el-col :span="12">2</el-col>
     <el-col :span="6" class="tool">
@@ -25,6 +25,15 @@ export default {
 </script>
 
 <style scoped lang="less">
+.container {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  margin-bottom: 60px;
+  z-index: 100000;
+}
+
 .el-row {
   min-height: 60px;
   background: red;

@@ -2,7 +2,7 @@ import axios from 'axios'
 import { BASE_URL } from './url'
 
 axios.defaults.baseURL = BASE_URL
-axios.defaults.timeout = 15000
+axios.defaults.timeout = 400000
 
 export default {
   get(url, params = {}, config = {}) {

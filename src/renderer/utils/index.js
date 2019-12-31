@@ -1,3 +1,5 @@
+// 榜单 -> idx 映射
+
 const idsDic = {
 
   "云音乐新歌榜": "0",
@@ -40,6 +42,6 @@ const idsDic = {
 
 export default {
   topListIdx(name) {
-
+    return idsDic[name] ? idsDic[name] : "0"
   }
 }
