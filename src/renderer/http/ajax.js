@@ -3,6 +3,7 @@ import {
   TOP_LIST,
   TOP_LIST_IDX,
   TOP_ARTIST,
+  SONG_URL,
 } from './url'
 
 
@@ -29,4 +30,16 @@ export default {
       "limit": limit
     })
   },
+
+  /**
+   *获取音乐URL
+   *
+   * @param {*} id 音乐id
+   * @returns Promise
+   */
+  getSongURL(id) {
+    return Http.get(SONG_URL, {
+      'id': id
+    })
+  }
 }

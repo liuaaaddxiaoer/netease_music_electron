@@ -12,6 +12,7 @@
             :class="index % 2 == 0 ? item_class_odd : item_class_even"
             v-for="(item, index) in items[index]"
             :key="index"
+            @click="getURL(item.id)"
           >
             <span class="rank">{{index + 1}}</span>
             <span class="percentage">-</span>
@@ -30,7 +31,12 @@
       <div class="global_container">
         <div class="globla_item" v-for="(item, index) of global" :key="index">
           <div class="avatar_container">
-            <img :src="item.coverImgUrl || item.coverUrl" alt="ok" />
+            <img
+              :src="item.coverImgUrl || item.coverUrl"
+              alt="ok"
+              draggable="false"
+              contenteditable="false"
+            />
             <span>
               <i />
             </span>
@@ -44,6 +50,7 @@
 
 <script>
 import Utils from "../utils";
+import { mapActions } from "vuex";
 
 export default {
   name: "NETopListPage",
@@ -123,7 +130,10 @@ export default {
             });
         });
       }
-    }
+    },
+
+    /// actions
+    ...mapActions(["getURL"])
   }
 };
 </script>
@@ -180,6 +190,7 @@ export default {
         }
 
         .recom_item {
+          cursor: pointer;
           padding: 6px 10px;
           display: flex;
           border-radius: 5px;
@@ -216,6 +227,7 @@ export default {
       }
 
       button {
+        cursor: pointer;
         font-size: 13px;
         color: #999;
         padding: 8px;
@@ -236,6 +248,7 @@ export default {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  padding-top: 10px;
 
   .globla_item {
     display: flex;
