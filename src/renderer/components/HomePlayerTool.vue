@@ -6,7 +6,7 @@
       <i class="prev size"></i>
       <i :class="play" @click="togglePlayer"></i>
       <i class="next size"></i>
-      <i class="iconfont icon-fenxiang-"></i>
+      <i class="iconfont icon-fenxiang-" @click="shareClick"></i>
       <div class="ok"></div>
     </div>
     <div class="volume_container">
@@ -17,6 +17,9 @@
 
 <script>
 import { mapState } from "vuex";
+
+import downloader from "js-file-download";
+
 export default {
   name: "HomePlayerTool",
   data() {
@@ -39,6 +42,11 @@ export default {
 
         player.pause();
       }
+    },
+    // 分享
+    shareClick() {
+      console.log(this.currentURL);
+      downloader(this.currentURL, "haha.mp3", "mp3");
     }
   }
 };

@@ -55,6 +55,7 @@
   "dependencies": {
     "axios": "^0.18.0",
     "element-ui": "^2.13.0",
+    "js-file-download": "^0.4.9",
     "throttle-debounce": "^2.1.0",
     "vue": "^2.5.16",
     "vue-electron": "^1.0.6",
